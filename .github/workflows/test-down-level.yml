@@ -40,10 +40,10 @@ jobs:
     name: Test
     steps:
     - name: Checkout repository
-      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
     - name: Install Perl
       if: runner.os == 'Windows'
-      uses: shogo82148/actions-setup-perl@fa3bdcb0144a50651e317f30949bb4491e74a6e4
+      uses: shogo82148/actions-setup-perl@53e33bb27be492a926eee378e8a5f7ff6618b061
       with:
         perl-version: '5.34'
     - name: Install NASM
@@ -80,6 +80,6 @@ jobs:
     permissions: {} # No need for any permissions.
     steps:
     - name: Decide whether the needed jobs succeeded or failed
-      uses: re-actors/alls-green@05ac9388f0aebcb5727afa17fcccfecd6f8ec5fe
+      uses: re-actors/alls-green@b5b5b37504aa4183270bd3d855c52a67f212be35
       with:
         jobs: ${{ toJSON(needs) }}
